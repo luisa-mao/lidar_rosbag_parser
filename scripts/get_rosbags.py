@@ -5,7 +5,7 @@ import subprocess
 # subprocess.run(["cd","/hdd/luisamao/robodata/Large_Crowds_Data"])
 excel_file = "/hdd/luisamao/robodata/SCAND.xlsx"
 all_rosbags = pd.read_excel(excel_file, sheet_name=1)
-save_path = "/hdd/luisamao/robodata/Large_Crowds_Data"
+save_path = "/hdd/luisamao/robodata/Large_Crowds_Data1"
 robot = "Spot"
 tag = "Navigating Through Large Crowds" #if None else sys.argv[1]
 end = len(all_rosbags)
@@ -15,4 +15,4 @@ for i in range(0,end):
         count+=1
         # print(all_rosbags["Link to rosbag"][i])
         # print(str(all_rosbags["Tags"][i]))
-        subprocess.run(["wget", "-O", count, str(all_rosbags["Link to rosbag"][i]), "-P", save_path])
+        subprocess.run(["wget", str(all_rosbags["Link to rosbag"][i]), "-P", save_path])

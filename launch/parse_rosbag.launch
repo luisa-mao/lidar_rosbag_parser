@@ -1,0 +1,26 @@
+<launch>
+
+    <!--    include launch file  -->
+    <include file="$(find pointcloud_to_laserscan)/launch/sample_laserscan_to_pointcloud_node.launch" />
+
+    <!--    run spot_move_base-->
+    <include file="$(find spot_move_base)/launch/spot_move_base_sim.launch" />
+
+
+    <arg name="bag" default="2022-01-18-15-01-51"/>
+
+    <!-- <arg name="rosbag_path" default="/hdd/luisamao/robodata/spot_ahg_dataset/$(arg bag).bag"/>
+    <arg name="save_data_path" default="/hdd/luisamao/robodata/Preference_Learning_Data/" /> -->
+
+    <arg name="rosbag_path" default="/hdd/luisamao/robodata/Large_Crowds_Data/$(arg bag).bag"/>
+    <arg name="save_data_path" default="/hdd/luisamao/robodata/Nav_Large_Crowds_Data/" />
+    <arg name="viz_lidar" default="true" />
+
+    <!--    data parser node -->
+    <param name="rosbag_path" type="str" value="$(arg rosbag_path)" />
+    <param name="save_data_path" type="str" value="$(arg save_data_path)" />
+    <param name="robot_name" type="str" value="spot" />
+    <param name="viz_lidar" type="str" value="$(arg viz_lidar)" />
+    <node name="listen_record_data" pkg="lidar_rosbag_parser" type="listen_record_data.py" output="screen" required="true"/>
+
+</launch>

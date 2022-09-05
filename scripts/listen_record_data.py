@@ -15,7 +15,7 @@ from termcolor import cprint
 import subprocess
 from scipy.spatial.transform import Rotation as R
 from tqdm import tqdm
-from parse_utils import BEVLidar, getOdom10Away
+from parse_utils import BEVLidar
 import yaml
 import rosbag
 # import sys
