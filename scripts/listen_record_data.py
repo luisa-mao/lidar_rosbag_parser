@@ -293,7 +293,7 @@ class ListenRecordData:
             cv2.imshow('bev_lidar', bev_lidar_image)
             if len(self.costmap_imgs)>0:
                 cv2.imshow('local_costmap', local_costmap_img)
-            cv2.waitKey(1)
+            # cv2.waitKey(1)
 
 
     def path_callback(self, msg):
