@@ -6,17 +6,16 @@
     <!--    run spot_move_base-->
     <include file="$(find spot_move_base)/launch/spot_move_base_sim.launch" />
 
-
-    <arg name="bag" default="test"/>
+    <arg name="bag" default="2tx99hsmjpl33k8ehimv6xlb38zijuw4"/>
 
     <!-- <arg name="rosbag_path" default="/hdd/luisamao/robodata/spot_ahg_dataset/$(arg bag).bag"/>
     <arg name="save_data_path" default="/hdd/luisamao/robodata/Preference_Learning_Data/" /> -->
 
     <!-- <arg name="rosbag_path" default="/hdd/luisamao/robodata/Large_Crowds_Data/$(arg bag).bag"/>
     <arg name="save_data_path" default="/hdd/luisamao/robodata/Nav_Large_Crowds_Data/" /> -->
-    <arg name="rosbag_path" default="/robodata/luisamao/$(arg bag).bag"/>
-    <arg name="save_data_path" default="/robodata/luisamao/test/" />
-    <arg name="viz_lidar" default="true" />
+    <arg name="rosbag_path" default="/home/luisamao/PreferenceLearningSocialNav/Against_Traffic_rosbags/$(arg bag).bag"/>
+    <arg name="save_data_path" default="/robodata/luisamao/Against_Traffic" />
+    <arg name="viz_lidar" default="false" />
 
     <!--    data parser node -->
     <param name="rosbag_path" type="str" value="$(arg rosbag_path)" />

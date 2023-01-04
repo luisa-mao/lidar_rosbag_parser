@@ -16,7 +16,7 @@ for filename in os.listdir(directory):
         with open(f, "rb") as file:
             a = pickle.load(file)
             for index in range(0, len(a['human_expert_odom'])):
-                if (len(a['move_base_path'][index])>0):
+                if (len(a['move_base_path'][index])>0 and len(a['human_expert_odom'][index])>0):
                     x1 = a['human_expert_odom'][index][0][0]-a['move_base_path'][index][0][0]
                     y1 = a['human_expert_odom'][index][0][1]-a['move_base_path'][index][0][1]
                     x2 = a['human_expert_odom'][index][-1][0]-a['move_base_path'][index][-1][0]

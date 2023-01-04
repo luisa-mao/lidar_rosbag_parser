@@ -133,6 +133,8 @@ class ListenRecordData:
             odom ([type]): [odometry ROS message]
         """
 
+        print("callback")
+
         # get the time of the current message in seconds
         if self.start_time is None:
             self.start_time = lidar.header.stamp.to_sec()
